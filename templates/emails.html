@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>Python Gmail Rank Stack</title>
+		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+		<script type="text/javascript">
+			$(document).ready(function() {
+	    		$('#rankstacked').DataTable( {
+	    			"order": [[ 3, "desc" ]]
+	    		})
+			} );
+		</script>
+		<style type="text/css">
+			td.bg { background-color:#fff; }
+		</style>
+	</head>
+	<body style='background-color:#ccc;'>
+<h1> PYTHON GMAIL RANK STACK </h1>
+	<table id="rankstacked" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>From</th>
+                <th>Subject</th>
+                <th>StackRank</th>
+                <th>Keywords Found</th>
+                <th>Actions</th>
+                <th>Excerpt</th>
+            </tr>
+        </thead>
+        <tbody>
+	        {% for item in rackstanked %}
+	        <tr >
+				<td class="bg">{{ item.Date }}</td>
+	            <td class="bg">{{ item.From }}</td>
+	            <td class="bg">{{ item.Subject[:85] }}</td>
+	            <td class="bg">{{ item.Weight }}</td>
+	            <td class="bg">{{ item.Found }}</td>
+	            <td class="bg"><a href='https://mail.google.com/mail/u/0/#search/{{ item.Subject }}+from:{{ item.From }}' target="_blank">Find Email</a></td>
+	            <td class="bg">{{ item.Excerpt }}</td>
+	        </tr>
+			{% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Date</th>
+                <th>From</th>
+                <th>Subject</th>
+                <th>StackRank</th>
+                <th>Keywords Found</th>
+                <th>Actions</th>
+                <th>Excerpt</th>
+            </tr>
+        </tfoot>
+    </table>
+<h4><em>A <a href='http://www.blamethenetwork.com/'>www.blamethenetwork.com</a> project</em></h4>
+
+	</body>
+</html>
