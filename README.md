@@ -12,7 +12,7 @@ Purpose: Provides a web interface using the gmail API to pull your emails and ra
   </ul>
   <h2>Tweaking your defined Query / Keywords</h2>
   <ul>
-   <li>Edit your email search query in the following line within rankstack.py:</li>
+   <li>Edit your email search query in the following line within rankstack.py: (use https://support.google.com/mail/answer/7190?hl=en for search query guidance)</li>
   <li>results = service.users().messages().list(userId='me',labelIds = ['INBOX'], q='job opportunity OR position OR openings OR roles OR hiring newer_than:30d').execute()</li>
   <li>Edit your keyword rank criteria in the following line within rankstack.py:</li>
   <li>stackrank = ['CCNA', 'CCNP', 'LAN', 'Cisco','Network Engineer', 'Salary', 'Remote']</li>
